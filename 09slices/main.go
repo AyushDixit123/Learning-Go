@@ -25,6 +25,7 @@ func main() {
 	highScores := make([]int, 2) // we are creating a space in memory for this variable that is a slices with size 4
 	highScores[0] = 123
 	highScores[1] = 345
+	//fmt.Printf("type of hidh scpre is %T", highScores)
 	//highScores[2] = 312 // this will create an error due to out of scope
 	highScores = append(highScores, 321)
 	// this will not cause an error
@@ -33,7 +34,6 @@ func main() {
 
 	//how to remove a value from slice based on index
 	var courses = []string{"react", "js", "swift", "python", "ruby"}
-
 	index := 2
 
 	courses = append(courses[:index], courses[index+1:]...)
