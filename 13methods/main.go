@@ -1,6 +1,6 @@
-// basics
 package main
 
+// structs are same as classes
 import "fmt"
 
 func main() {
@@ -8,6 +8,8 @@ func main() {
 	// using structure created
 	hitesh := User{"ayush", "ayush.go.dev", true, 20}
 	fmt.Println(hitesh)
+	hitesh.GetStatus()
+
 }
 
 // u in capitaal bcz as it is like a template it is needed to be exported out
@@ -18,4 +20,7 @@ type User struct {
 	Age    int
 }
 
-//Exported Fields: In Go, if a field's name starts with an uppercase letter, it's exported (public) and can be accessed from other packages. If it starts with a lowercase letter, it’s unexported (private) and only accessible within the same package.
+// passing struct in arg of function makes it method
+func (u User) GetStatus() {
+	fmt.Println("is user active: ", u.Status)
+}
